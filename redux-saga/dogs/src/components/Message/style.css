@@ -1,0 +1,7 @@
+.message {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.message--error {
+  color: red;
+}

@@ -1,0 +1,152 @@
+/* colors */
+
+$black: #222831;
+$black2: #393e46;
+$blue: #00adb5;
+$grey: #777;
+$light-grey: #f4f4f4;
+$white: #fff;
+
+/* fonts */
+
+$font-stack: Arial, Helvetica, sans-serif;
+
+/* screen breakpoints and mixins */
+
+$sm-width: 480px;
+$md-width: 768px;
+$lg-width: 1024px;
+
+@mixin wide-screen {
+  @media only screen
+    and (min-width: #{$md-width}) {
+      @content;
+  }
+}
+
+/* body */
+
+.body {
+  background-color: $light-grey;
+  font-family: $font-stack;
+  margin: 0;
+}
+
+/* header */
+
+.header {
+  align-items: center;
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  justify-content: space-evenly;
+  
+  @include wide-screen {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  
+  &__h1 {
+    color: $blue;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  &__nav {
+    color: $white;
+  }
+  
+  &__ul {
+    margin: 0 0 0 10px;
+    padding: 0;
+  }
+
+  &__li {
+    display: inline;
+    list-style: none;
+    margin-right: 10px;
+  }
+
+  &__a {
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      color: $blue;
+    }
+
+    &--active {
+      color: $grey;
+
+      &:hover {
+        color: $grey;
+        cursor: default;
+      }
+    }
+  }
+}
+
+/* main */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  
+  @include wide-screen {
+    flex-direction: row;
+    min-height: 500px;
+  }
+
+  &__article {
+    min-height: 250px;
+    padding: 20px;
+
+    @include wide-screen {
+      width: 75%;
+    }
+  }
+
+  &__aside {
+    background-color: $black2;
+    color: $white;
+    min-height: 250px;
+    padding: 20px;
+
+    @include wide-screen {
+      width: 25%;
+    }
+  }
+
+  &__h2 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+  }
+
+  &__ul {
+    margin: 0;
+  }
+
+  &__a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+/* footer */
+
+.footer {
+  align-items: center;
+  background-color: $blue;
+  color: $black;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+}
