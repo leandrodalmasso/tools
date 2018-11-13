@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Clock from './components/StateAndLifecycle';
+import MouseTracker from './components/RenderProps';
 
 ReactDOM.render(
-  <Clock /> ,
+  <MouseTracker />,
   document.getElementById('root')
 );

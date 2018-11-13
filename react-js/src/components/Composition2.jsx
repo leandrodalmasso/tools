@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Composition2.css';
+import './../styles/fancyBorder.css'
 
 function FancyBorder({ children, color }) {
   return (
