@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MouseTracker from './components/RenderProps';
+import {
+  GreetingWithName,
+  GreetingWithNameWithCard
+} from './components/hoc';
 
 ReactDOM.render(
-  <MouseTracker />,
+  <GreetingWithNameWithCard />,
   document.getElementById('root')
 );
