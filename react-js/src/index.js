@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  AppWithModal,
+  AppWithShowModal,
   GreetingWithName,
+  GreetingWithName2,
   GreetingWithNameWithCard
 } from './components/hoc';
 
 ReactDOM.render(
-  <GreetingWithNameWithCard />,
+  <AppWithShowModal />,
   document.getElementById('root')
 );

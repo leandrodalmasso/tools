@@ -15,11 +15,16 @@ const withInjectedProps = (Component, injectedProps) => (props) => (
   <Component {...injectedProps}/>
 );
 
+const withInjectedProps2 = (injectedProps) => (Component) => (props) => (
+  <Component {...injectedProps}/>
+);
+
 function Greeting(props) {
   return <h1>{`Hello ${props.name}!`}</h1>;
 }
 
 export const GreetingWithName = withInjectedProps(Greeting, { name: 'Mary Poppins' });
+export const GreetingWithName2 = withInjectedProps2({ name: 'Mary Poppins' })(Greeting);
 
 /**
  * Re-use structure
@@ -58,8 +63,8 @@ const Modal = ({ children, handleClose, show }) => (
   )
 );
 
-const withModal = (Component) => (
-  class ModalFunctionality extends React.Component {
+const withShowModal = (Component) => (
+  class ShowModal extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -103,4 +108,4 @@ const App = ({ openModal }) => (
   </button>
 );
 
-export const AppWithModal = withModal(App);
+export const AppWithShowModal = withShowModal(App);
