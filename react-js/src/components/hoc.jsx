@@ -1,4 +1,5 @@
 import React from 'react';
+import './../styles/modal.css';
 
 /*
 A hoc is a function that takes a component and returns a new component.
@@ -7,21 +8,21 @@ It transforms a component into another component.
 */
 
 /**
- * Add a prop
+ * Re-use data
  */
 
-const withName = (Component) => (props) => (
-  <Component {...props} name="Mary Poppins" />
+const withInjectedProps = (Component, injectedProps) => (props) => (
+  <Component {...injectedProps}/>
 );
 
 function Greeting(props) {
   return <h1>{`Hello ${props.name}!`}</h1>;
 }
 
-export const GreetingWithName = withName(Greeting);
+export const GreetingWithName = withInjectedProps(Greeting, { name: 'Mary Poppins' });
 
 /**
- * Add structure
+ * Re-use structure
  */
 
 const divStyle = {
@@ -41,5 +42,65 @@ const withCard = (Component) => (props) => (
 export const GreetingWithNameWithCard = withCard(GreetingWithName);
 
 /**
- * Add functionality
+ * Re-use functionality
  */
+
+const Modal = ({ children, handleClose, show }) => (
+  show && (
+    <div className="modal">
+      <div className="modal__content">
+        {children}
+        <button className="modal__button" onClick={handleClose}>
+          Close
+        </button>
+      </div>
+    </div>
+  )
+);
+
+const withModal = (Component) => (
+  class ModalFunctionality extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        showModal: false,
+      };
+  
+      this.hideModal = this.hideModal.bind(this);
+      this.showModal = this.showModal.bind(this);
+    }
+  
+    hideModal() {
+      this.setState({
+        showModal: false,
+      });
+    }
+  
+    showModal() {
+      this.setState({
+        showModal: true,
+      });
+    }
+  
+    render() {
+      const { showModal } = this.state;
+  
+      return (
+        <React.Fragment>
+          <Component openModal={this.showModal} />
+          <Modal handleClose={this.hideModal} show={showModal}>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          </Modal>
+        </React.Fragment>
+      );
+    }
+  }
+);
+
+const App = ({ openModal }) => (
+  <button onClick={openModal} type="button">
+    Open Modal
+  </button>
+);
+
+export const AppWithModal = withModal(App);
