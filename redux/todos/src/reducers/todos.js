@@ -1,4 +1,4 @@
-// Actions
+// Action types
 import { ADD_TODO, TOGGLE_TODO } from './../actions/actionTypes';
 
 const todos = (state = [], action) => {

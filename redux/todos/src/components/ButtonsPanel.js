@@ -3,8 +3,8 @@ import React from 'react';
 import Button from './Button';
 import { connect } from 'react-redux';
 
-// Actions
-import { setVisibilityFilter } from './../actions/index';
+// Action creators
+import { setVisibilityFilter } from '../actions/actionCreators';
 
 // Constants
 import { visibilityFilters } from  './../utils/constants';

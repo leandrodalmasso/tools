@@ -1,25 +1,28 @@
 import React from 'react';
 
-function withName(WrappedComponent) {
-  class ModifiedComponent extends React.Component {
-    render() {
-      return (
-        <WrappedComponent
-          {...this.props}
-          name="Mary Poppins"
-        />
-      );
-    }
-  }
+/*
+A hoc is a function that takes a component and returns a new component.
 
-  return ModifiedComponent;
-}
+It transforms a component into another component.
+*/
+
+/**
+ * Add a prop
+ */
+
+const withName = (Component) => (props) => (
+  <Component {...props} name="Mary Poppins" />
+);
 
 function Greeting(props) {
   return <h1>{`Hello ${props.name}!`}</h1>;
 }
 
 export const GreetingWithName = withName(Greeting);
+
+/**
+ * Add structure
+ */
 
 const divStyle = {
   border: '4px solid black',
@@ -29,14 +32,14 @@ const divStyle = {
   padding: '20px',
 };
 
-function withCard(Component) {
-  return function ComponentWithCard(props) {
-    return (
-      <div style={divStyle}>
-        <Component {...props} />
-      </div>
-    );
-  }
-}
+const withCard = (Component) => (props) => (
+  <div style={divStyle}>
+    <Component {...props} />
+  </div>
+);
 
 export const GreetingWithNameWithCard = withCard(GreetingWithName);
+
+/**
+ * Add functionality
+ */

@@ -1,4 +1,4 @@
-// Actions
+// Action types
 import { SET_VISIBILITY_FILTER } from './../actions/actionTypes';
 
 // Constants

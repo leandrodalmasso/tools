@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 // Components
 import Button from './Button';
 
-// Actions
-import { addTodo } from './../actions/index';
+// Action creators
+import { addTodo } from '../actions/actionCreators';
 
 class AddTodo extends React.Component {
   constructor(props) {

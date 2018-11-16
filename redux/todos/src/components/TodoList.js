@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 // Components
 import Todo from './Todo';
 
-// Actions
-import { toggleTodo } from './../actions/index';
+// Action creators
+import { toggleTodo } from '../actions/actionCreators';
 
 // Constants
 import { visibilityFilters } from './../utils/constants';

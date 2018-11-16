@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Styles
 const buttonStyle = { marginLeft: '4px' };
 
 const Button = ({ onClick, text }) => (
