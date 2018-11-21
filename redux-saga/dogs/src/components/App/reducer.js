@@ -1,3 +1,4 @@
+// Action types
 import {
   DOG_REQUEST,
   DOG_REQUEST_SUCCESS,

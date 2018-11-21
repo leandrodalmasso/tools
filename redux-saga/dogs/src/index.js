@@ -1,24 +1,32 @@
-import createSagaMiddleware from 'redux-saga';
+// Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { Provider } from "react-redux";
+import createSagaMiddleware from 'redux-saga';
 
+// Reducers
 import reducer from './components/App/reducer';
-import { watcherSaga } from './components/App/sagas';
 
+// Sagas
+import watcherSaga from './components/App/sagas';
+
+// Components
 import App from './components/App';
 
-const reduxDevTools =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const reduxDevTools = (
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-// create the saga middleleware
 const sagaMiddleware = createSagaMiddleware();
 
-// create a redux store with our reducer above and middleware
+// Store
 const store = createStore(
   reducer,
-  compose(applyMiddleware(sagaMiddleware), reduxDevTools)
+  compose(
+    applyMiddleware(sagaMiddleware),
+    reduxDevTools
+  )
 );
 
 // run the watcherSaga, so that it can trigger the workerSaga

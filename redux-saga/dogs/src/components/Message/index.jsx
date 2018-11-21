@@ -1,7 +1,7 @@
 // Dependencies
-import cn from 'classnames';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import cn from 'classnames';
 
 // Styles
 import './style.css';

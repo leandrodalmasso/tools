@@ -17,7 +17,7 @@ function App({ dog, error, fetching, requestDog }) {
   return (
     <div className="app">
       <Button
-        className="button button--purple"
+        color="purple"
         onClick={requestDog}
         text="Dog picture!"
       />

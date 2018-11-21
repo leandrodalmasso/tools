@@ -10,10 +10,14 @@ import App from './components/App';
 // Reducer
 import rootReducer from './reducers/rootReducer';
 
+const reduxDevTools = (
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 // Store
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  reduxDevTools
 );
 
 ReactDOM.render(

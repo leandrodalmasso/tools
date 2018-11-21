@@ -1,9 +1,6 @@
 // Dependencies
 import { takeLatest, call, put } from "redux-saga/effects";
 
-// Api
-import { fetchDog } from './api';
-
 // Action types
 import {
   DOG_REQUEST,
@@ -11,7 +8,10 @@ import {
   DOG_REQUEST_FAILED,
 } from './actionTypes';
 
-export function* watcherSaga() {
+// Api
+import { fetchDog } from './api';
+
+function* watcherSaga() {
   yield takeLatest(DOG_REQUEST, workerSaga);
 }
 
@@ -25,3 +25,5 @@ function* workerSaga() {
     yield put({ type: DOG_REQUEST_FAILED, error });
   }
 }
+
+export default watcherSaga;

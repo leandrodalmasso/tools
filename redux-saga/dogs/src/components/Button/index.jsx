@@ -1,20 +1,23 @@
 // Dependencies
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Styles
 import './style.css';
 
-function Button({ className, onClick, text }) {
+function Button({ color, onClick, text }) {
   return(
-    <button className={className} onClick={onClick} >
+    <button
+      className={`button button--${color}`}
+      onClick={onClick}
+    >
       {text}
     </button>
   );
 }
 
 Button.propTypes = {
-  className: PropTypes.string,
+  color: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 }
