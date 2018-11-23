@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default function parameters</title>
+</head>
+<body>
+<div id="square" style="height: 200px; width: 200px"></div>
+<script>
+  /*
+  Default function parameters allow formal parameters to be initialized with default values if no value or undefined is passed as an argument.
+  */
+  
+  function setBackgroundcolor(element, color = 'dodgerblue') {
+    element.style.backgroundColor = color;
+  }
+
+  const square = document.getElementById('square');
+  setBackgroundcolor(square);
+</script>
+</body>
+</html>

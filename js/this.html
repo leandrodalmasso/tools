@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>This</title>
+</head>
+<body>
+<div class="square" id="square"></div>
+<div class="circle" id="circle"></div>
+<style>
+  .circle {
+    background-color: crimson;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+  }
+    
+  .square {
+    background-color: dodgerblue;
+    height: 200px;
+    margin-bottom: 20px;
+    width: 200px;
+  }
+</style>
+<script>
+  /**
+   * global this
+   */
+
+  console.log(this); // window
+
+  /**
+   * function calls
+   */
+
+  function returnThis() {
+    return this;
+  }
+  console.log(returnThis()); // window
+
+  function strictModeReturnThis() {
+    'use strict'
+    return this;
+  }
+  console.log(strictModeReturnThis()) // undefined
+
+  /**
+   * objects
+   */
+
+  let obj = {
+    returnThis,
+  };
+  console.log(obj.returnThis()); // obj
+
+  /**
+   * dom elements
+   */
+
+  function logThis() {
+    console.log(this);
+  }
+  const square = document.getElementById('square');
+  square.addEventListener('click', logThis); // square
+
+  /**
+   * explicit bindings
+   */
+
+  console.log(returnThis.call(obj)); // obj
+  console.log(returnThis.bind(obj)()); // obj
+  console.log(returnThis.apply(obj)); // obj
+
+  /**
+   * arrow
+   */
+
+  // objects
+  const arrowReturnThis = () => this;
+  obj = {
+    arrowReturnThis,
+  };
+  console.log(obj.arrowReturnThis()); // window
+
+  // dom elements
+  const arrowLogThis = () => console.log(this);
+  const circle = document.getElementById('circle');
+  circle.addEventListener('click', arrowLogThis); // window
+</script>
+</body>
+</html>
