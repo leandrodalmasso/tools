@@ -33,10 +33,14 @@
    * function declaration
    */
 
-  sayHiTo('Mary'); // Hi Mary!
+  console.log(logIn('abc')); // Welcome!
 
-  function sayHiTo(name) {
-    console.log(`Hi ${name}!`);
+  function logIn(password) {
+    if (password === 'abc') {
+      return 'Welcome!'
+    }
+
+    return 'Oops, something went wrong.';
   }
 </script>
 </body>

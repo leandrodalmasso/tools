@@ -5,18 +5,22 @@
   <title>This</title>
 </head>
 <body>
-<div class="square" id="square"></div>
-<div class="circle" id="circle"></div>
+<main>
+  <div class="square" id="square"></div>
+  <div class="circle" id="circle"></div>
+</main>
 <style>
   .circle {
     background-color: crimson;
     border-radius: 50%;
+    cursor: pointer;
     height: 200px;
     width: 200px;
   }
     
   .square {
     background-color: dodgerblue;
+    cursor: pointer;
     height: 200px;
     margin-bottom: 20px;
     width: 200px;
@@ -24,7 +28,7 @@
 </style>
 <script>
   /**
-   * global this
+   * global
    */
 
   console.log(this); // window
@@ -33,33 +37,30 @@
    * function calls
    */
 
-  function returnThis() {
-    return this;
+  function logThis() {
+    console.log(this);
   }
-  console.log(returnThis()); // window
+  logThis(); // window
 
-  function strictModeReturnThis() {
+  function strictModeLogThis() {
     'use strict'
-    return this;
+    console.log(this);
   }
-  console.log(strictModeReturnThis()) // undefined
+  strictModeLogThis(); // undefined
 
   /**
    * objects
    */
 
   let obj = {
-    returnThis,
+    logThis,
   };
-  console.log(obj.returnThis()); // obj
+  obj.logThis(); // obj
 
   /**
    * dom elements
    */
 
-  function logThis() {
-    console.log(this);
-  }
   const square = document.getElementById('square');
   square.addEventListener('click', logThis); // square
 
@@ -67,23 +68,23 @@
    * explicit bindings
    */
 
-  console.log(returnThis.call(obj)); // obj
-  console.log(returnThis.bind(obj)()); // obj
-  console.log(returnThis.apply(obj)); // obj
+  logThis.call(obj); // obj
+  logThis.bind(obj)(); // obj
+  logThis.apply(obj); // obj
 
   /**
    * arrow
    */
 
+  const arrowLogThis = () => console.log(this);
+
   // objects
-  const arrowReturnThis = () => this;
   obj = {
-    arrowReturnThis,
+    arrowLogThis,
   };
-  console.log(obj.arrowReturnThis()); // window
+  obj.arrowLogThis(); // window
 
   // dom elements
-  const arrowLogThis = () => console.log(this);
   const circle = document.getElementById('circle');
   circle.addEventListener('click', arrowLogThis); // window
 </script>
