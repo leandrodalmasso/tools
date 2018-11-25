@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring arrays</title>
+</head>
+<body>
+<script>
+  const interests = ['javascript', 'music', 'books'];
+
+  const [ first, second, third ] = interests;
+  console.log(first); // javascript
+  console.log(second); // music
+  console.log(third); // books
+
+  // skip items
+  let [ a, , c ] = interests;
+  console.log(a); // javascript
+  console.log(c); // books
+
+  // swap without aux
+  [a, c] = [c, a];
+  console.log(a); // books
+  console.log(c); // javascript
+
+  // rest
+  const [ first, ...rest ] = interests;
+  console.log(first); // javascript
+  console.log(); // [ 'music', 'books' ]
+</script>
+</body>
+</html>

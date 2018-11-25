@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring objects</title>
+</head>
+<body>
+<script>
+  const user = {
+    admin: true,
+    firstName: 'Mary',
+    lastName: 'Poppins',
+    info: {
+      active: true,
+      posts: 3018,
+    },
+    username: 'maryPoppins',
+  };
+
+  const {
+    admin = false,
+    firstName: name,
+    info: {
+      posts
+    }
+  } = user;
+  
+  console.log(admin); // true
+  console.log(name); // Mary
+  console.log(posts); // 3018
+</script>
+</body>
+</html>
