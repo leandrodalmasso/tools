@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rest parameters</title>
+</head>
+<body>
+<script>
+  // packs multiple elements into a single array
+
+  function sumAll(...numbers) {
+    return numbers.reduce(
+      (prev, current) => prev + current
+    );
+  }
+
+  console.log(sumAll(4, 8, 15, 16, 23, 42)); // 108
+
+  const student = ['Harry Potter', 'Hogwarts', 9, 8, 7, 9];
+  const [name, school, ...grades] = student;
+  
+  console.log(name); // Harry Potter
+  console.log(school); // Hogwarts
+  console.log(grades); // [ 9, 8, 7, 9 ]
+</script>
+</body>
+</html>
