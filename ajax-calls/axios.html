@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Axios</title>
+</head>
+<body>
+  <p id="text">A Chuck Norris joke will appear here...</p>
+  <button id="button">Get joke!</button>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  const text = document.getElementById('text');
+  const button = document.getElementById('button');
+
+  function getJoke(url) {
+    axios.get('http://api.icndb.com/jokes/random')
+    // axios.get('https://httpstat.us/505')
+      .then(response =>
+        text.innerHTML = response.data.value.joke
+      )
+      .catch(error =>
+        text.innerHTML = error.message
+      )
+  }
+
+  button.addEventListener('click', getJoke);
+</script>
+</body>
+</html>

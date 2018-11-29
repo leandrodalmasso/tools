@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch</title>
+</head>
+<body>
+  <p id="text">A Chuck Norris joke will appear here...</p>
+  <button id="button">Get joke!</button>
+<script>
+  const text = document.getElementById('text');
+  const button = document.getElementById('button');
+
+  function getJoke() {
+    fetch('http://api.icndb.com/jokes/random')
+    // fetch('https://httpstat.us/505')
+      .then(response => {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          throw new Error('Oops, something went wrong...');
+        }
+      })
+      .then(json =>
+        text.innerHTML = json.value.joke
+      )
+      .catch(error =>
+        text.innerHTML = error.message
+      )
+  }
+
+  button.addEventListener('click', getJoke);
+
+  /*
+  The promise returned by fetch rejects when it’s impossible to make a request.
+  For instance, a remote server is not available, or the URL is malformed.
+
+  But if the remote server responds with error 404, or even error 500,
+  then it’s considered a valid response. That's why we should check the 
+  response.status property that has HTTP status, and if it’s not 200,
+  then throw an error.
+  */
+</script>
+</body>
+</html>
