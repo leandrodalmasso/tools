@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple promises</title>
+</head>
+<body>
+<script>
+  const weatherPromise = new Promise((resolve, reject) => {
+    setTimeout(
+      () => resolve({temp: 24, conditions: 'Sunny'}),
+      // () => reject(new Error('oops')),
+      2000
+    );
+  });
+
+  const tweetsPromise = new Promise((resolve, reject) => {
+    setTimeout(
+      () => resolve(['I like JS', 'JS is cool!']),
+      // () => reject(new Error('oops')),
+      500
+    );
+  });
+
+  Promise.all([weatherPromise, tweetsPromise])
+    .then(responses => console.log(responses))
+    .catch(error => console.log(error.message))
+
+  Promise.race([weatherPromise, tweetsPromise])
+    .then(response => console.log(response))
+    .catch(error => console.log(error.message))
+</script>
+</body>
+</html>
