@@ -11,20 +11,15 @@ It transforms a component into another component.
  * Re-use data
  */
 
-const withInjectedProps = (Component, injectedProps) => (props) => (
-  <Component {...injectedProps}/>
-);
-
-const withInjectedProps2 = (injectedProps) => (Component) => (props) => (
-  <Component {...injectedProps}/>
-);
-
 function Greeting(props) {
   return <h1>{`Hello ${props.name}!`}</h1>;
 }
 
+const withInjectedProps = (Component, injectedProps) => () => (
+  <Component {...injectedProps}/>
+);
+
 export const GreetingWithName = withInjectedProps(Greeting, { name: 'Mary Poppins' });
-export const GreetingWithName2 = withInjectedProps2({ name: 'Mary Poppins' })(Greeting);
 
 /**
  * Re-use structure
@@ -50,11 +45,11 @@ export const GreetingWithNameWithCard = withCard(GreetingWithName);
  * Re-use functionality
  */
 
-const Modal = ({ children, handleClose, show }) => (
+const withModal = (Component) => ({ handleClose, show }) => (
   show && (
     <div className="modal">
       <div className="modal__content">
-        {children}
+        <Component />
         <button className="modal__button" onClick={handleClose}>
           Close
         </button>
@@ -63,49 +58,46 @@ const Modal = ({ children, handleClose, show }) => (
   )
 );
 
-const withShowModal = (Component) => (
-  class ShowModal extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        showModal: false,
-      };
-  
-      this.hideModal = this.hideModal.bind(this);
-      this.showModal = this.showModal.bind(this);
-    }
-  
-    hideModal() {
-      this.setState({
-        showModal: false,
-      });
-    }
-  
-    showModal() {
-      this.setState({
-        showModal: true,
-      });
-    }
-  
-    render() {
-      const { showModal } = this.state;
-  
-      return (
-        <React.Fragment>
-          <Component openModal={this.showModal} />
-          <Modal handleClose={this.hideModal} show={showModal}>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-          </Modal>
-        </React.Fragment>
-      );
-    }
+const GreetingWithNameWithModal = withModal(GreetingWithName);
+const GreetingWithNameWithCardWithModal = withModal(GreetingWithNameWithCard);
+
+export class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+    };
+
+    this.hideModal = this.hideModal.bind(this);
+    this.showModal = this.showModal.bind(this);
   }
-);
 
-const App = ({ openModal }) => (
-  <button onClick={openModal} type="button">
-    Open Modal
-  </button>
-);
+  hideModal() {
+    this.setState({
+      showModal: false,
+    });
+  }
 
-export const AppWithShowModal = withShowModal(App);
+  showModal() {
+    this.setState({
+      showModal: true,
+    });
+  }
+
+  render() {
+    const { showModal } = this.state;
+
+    return (
+      <div>
+        <button onClick={this.showModal} type="button">
+          Open Modal
+        </button>
+
+        <GreetingWithNameWithCardWithModal
+          handleClose={this.hideModal}
+          show={showModal}
+        />
+      </div>
+    );
+  }
+}
