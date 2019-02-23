@@ -2,12 +2,11 @@
   "editor.fontSize": 16,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.wordWrap": "on",
+  // "editor.wordWrap": "on",
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "workbench.activityBar.visible": false,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": false,
 }
