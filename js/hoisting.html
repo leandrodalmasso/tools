@@ -42,6 +42,21 @@
 
     return 'Oops, something went wrong.';
   }
+
+  /**
+   * function expression
+   */
+  
+  try {
+    log('hi!');
+  } catch (error) {
+    const msg = `${error.name}: ${error.message}`
+    console.log(msg); // ReferenceError: log is not defined
+  }
+  
+  const log = function(value) {
+    console.log(value);
+  }
 </script>
 </body>
 </html>

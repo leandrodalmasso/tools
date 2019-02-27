@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classes</title>
+</head>
+<body>
+<script>
+  /**
+   * Prototypal Inheritance
+   */
+  
+  // function Dog(name, color) {
+  //   this.name = name;
+  //   this.color = color;
+  // }
+  // Dog.prototype.bark = function() {
+  //   console.log(`Bark bark! My name is ${this.name}`);
+  // }
+  
+  /**
+   * ES6
+   */
+  
+  // class declaration: class Dog() {}
+  // class expression: const Dog = class {}
+  
+  // class Dog {
+  //   constructor(name, color) {
+  //     this.name = name;
+  //     this.color = color;
+  //   }
+    
+  //   bark() {
+  //     console.log(`Bark bark! My name is ${this.name}`);
+  //   }
+    
+  //   // isn't called on instances but on the class itself
+  //   static info() {
+  //     console.log('A dog is better than a cat!');
+  //   }
+
+  //   // setter
+  //   set nickName(value) {
+  //     this.nick = value.trim() ;
+  //   }
+
+  //   // getter
+  //   get nickName() {
+  //     return this.nick;
+  //   }
+  // }
+
+  /**
+   * Extending classes
+   */
+
+  class Animal {
+    constructor(name) {
+      this.name = name;
+      this.thirst = 100;
+      this.belly = [];
+    }
+
+    drink() {
+      this.thirst -= 10;
+      return this.thirst;
+    }
+
+    eat(food) {
+      this.belly.push(food);
+      return this.belly;
+    }
+
+    run() {
+      this.thirst += 10;
+      return this.thirst;
+    }
+  }
+
+  class Dog extends Animal {
+    constructor(name, color) {
+      super(name);
+      this.color = color;
+    }
+
+    bark() {
+      console.log(`Bark bark! My name is ${this.name}`);
+    }
+  }
+
+  const snickers = new Dog('Snickers', 'brown');
+  const sunny = new Dog('Sunny', 'white');
+
+  class MovieCollection extends Array {
+    constructor(name, ...items) {
+      super(...items);
+      this.name = name;
+    }
+
+    add(movie) {
+      this.push(movie);
+    }
+
+    topRated(limit = 10) {
+      return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+    }
+  }
+
+  const movies = new MovieCollection(
+    'Favourite movies',
+    { name: 'the big lebowski', stars: 5 },
+    { name: 'pizza birra faso', stars: 5 },
+    { name: 'the lobster', stars: 4 },
+  );
+</script>
+</body>
+</html>
