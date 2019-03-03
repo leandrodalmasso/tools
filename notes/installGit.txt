@@ -1,0 +1,7 @@
+sudo apt-get install git
+
+set for every repo:
+
+  git config user.email name@domain.com
+  git config user.name name
+  git config --list
