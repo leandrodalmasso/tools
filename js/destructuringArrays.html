@@ -6,27 +6,27 @@
 </head>
 <body>
 <script>
-  const interests = ['javascript', 'music', 'books'];
+  const interests = ['js', 'music', 'books'];
 
   const [ first, second, third ] = interests;
-  console.log(first); // javascript
+  console.log(first); // js
   console.log(second); // music
   console.log(third); // books
 
   // skip items
   let [ a, , c ] = interests;
-  console.log(a); // javascript
+  console.log(a); // js
   console.log(c); // books
 
   // swap without aux
   [a, c] = [c, a];
   console.log(a); // books
-  console.log(c); // javascript
+  console.log(c); // js
 
   // rest
-  const [ first, ...rest ] = interests;
-  console.log(first); // javascript
-  console.log(); // [ 'music', 'books' ]
+  const [ firstInt, ...rest ] = interests;
+  console.log(firstInt); // js
+  console.log(rest); // [ 'music', 'books' ]
 </script>
 </body>
 </html>

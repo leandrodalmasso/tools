@@ -103,7 +103,9 @@
     }
 
     topRated(limit = 10) {
-      return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+      return this
+        .sort((a, b) => (a.stars > b.stars ? -1 : 1))
+        .slice(0, limit);
     }
   }
 
