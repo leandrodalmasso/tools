@@ -2,21 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Generators</title>
+  <title>Generators Ajax</title>
 </head>
 <body>
 <script>
-  // Generators are functions that can be paused and resumed
-
-  function* listPeople() {
-    yield 'Harry Potter';
-    yield 'Mary Poppins';
-  }
-
-  const people = listPeople();
-
-  // Ajax calls
-
   function ajax(url) {
     fetch(url)
       .then(data => data.json())
@@ -24,7 +13,7 @@
       .then(json => dataGenerator.next(json));
   }
 
-  function* steps() {
+  function* calls() {
     console.log('fetching beers');
     const beers = yield ajax(
       'http://api.react.beer/v2/search?q=hops&type=beer'
@@ -38,7 +27,7 @@
     console.log(leandro);
   }
 
-  const dataGenerator = steps();
+  const dataGenerator = calls();
   dataGenerator.next();
 </script>
 </body>
