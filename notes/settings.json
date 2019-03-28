@@ -6,8 +6,5 @@
   // "editor.wordWrap": "on",
   "window.menuBarVisibility": "toggle",
   // "window.titleBarStyle": "native",
-  // "workbench.activityBar.visible": false,
-  // "workbench.editor.tabSizing": "shrink",
   "workbench.startupEditor": "none",
-  // "workbench.statusBar.visible": false,
 }
