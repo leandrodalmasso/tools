@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Iterators, generators and iterables</title>
+  <title>Iterators and iterables</title>
 </head>
 <body>
 <script>
@@ -33,22 +33,6 @@
   console.log(myIterator.next()); // { value: 3, done: false }
   console.log(myIterator.next()); // { done: true }
   console.log(myIterator.next()); // { done: true }
-
-  /*
-  generators: functions that can be paused and resumed
-  they return a generator object
-  when next() is called function executes until the next yield
-  */
-
-  function* listPeople() {
-    yield 'Harry Potter';
-    yield 'Mary Poppins';
-  }
-
-  const people = listPeople();
-  people.next() // {value: "Harry Potter", done: false}
-  people.next() // {value: "Mary Poppins", done: false}
-  people.next() // {value: undefined, done: true}
 
   /*
   iterable: object with an iteration behaviour defined
