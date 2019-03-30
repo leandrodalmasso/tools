@@ -1,0 +1,12 @@
+install zsh:
+sudo apt-get install zsh
+install ohMyZsh:
+wget or curl
+----------------------------
+move to parent directories:
+..
+...
+....
+----------------------------
+create a dir and cd into it:
+take dirName
