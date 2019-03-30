@@ -1,0 +1,5 @@
+install zsh:
+sudo apt-get install zsh
+----------------------------
+install ohMyZsh:
+wget or curl

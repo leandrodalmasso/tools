@@ -1,16 +1,16 @@
 install:
-  sudo apt-get install git
-
+sudo apt-get install git
+-----------------------------------------------
 set for all repos:
-  git config --global user.email name@domain.com
-
+git config --global user.email name@domain.com
+-----------------------------------------------
 set for every repo:
-  git config user.email name@domain.com
-  git config user.name name
-
+git config user.email name@domain.com
+git config user.name name
+-----------------------------------------------
 list:
-  git config --list
-
+git config --list
+-----------------------------------------------
 unset:
-  git config --global --unset user.name
-  git config --unset user.name
+git config --global --unset user.name
+git config --unset user.name
