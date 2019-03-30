@@ -1,0 +1,23 @@
+present working directory:
+pwd
+---------------------------------------------
+list:
+ls
+ls -l
+---------------------------------------------
+change directory:
+cd directoryName
+cd ..
+cd ./../
+cd
+---------------------------------------------
+create directory:
+mkdir
+---------------------------------------------
+create file:
+touch fileName.txt
+---------------------------------------------
+delete:
+rm
+rm -r
+rm -rf
