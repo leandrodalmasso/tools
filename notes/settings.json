@@ -1,10 +1,9 @@
 {
   "editor.detectIndentation": false,
-  // "editor.fontSize": 16,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   // "editor.wordWrap": "on",
   "window.menuBarVisibility": "toggle",
   // "window.titleBarStyle": "native",
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "none"
 }
