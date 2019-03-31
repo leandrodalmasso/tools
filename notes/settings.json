@@ -1,9 +1,11 @@
 {
   "editor.detectIndentation": false,
+  "editor.fontFamily": "'DejaVu Sans Mono', monospace",
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  // "editor.wordWrap": "on",
+  "terminal.integrated.fontFamily": "'Ubuntu Mono derivative Powerline', monospace",
   "window.menuBarVisibility": "toggle",
+  "workbench.startupEditor": "none",
+  // "editor.wordWrap": "on",
   // "window.titleBarStyle": "native",
-  "workbench.startupEditor": "none"
 }
