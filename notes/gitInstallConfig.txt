@@ -14,3 +14,7 @@ git config --list
 unset:
 git config --global --unset user.name
 git config --unset user.name
+-----------------------------------------------
+remember credentials:
+git config credential.helper store
+push or pull one time
