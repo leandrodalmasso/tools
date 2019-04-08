@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maps and weakmaps</title>
+</head>
+<body>
+<div class="buttons">
+  <button>Snakes</button>
+  <button>Cry</button>
+  <button>Ice Cream</button>
+  <button>Fire</button>
+  <button>Dancer</button>
+</div>
+<script>
+  /*
+  map
+  key-value pairs of any type
+  remembers the original insertion order of the keys
+  it's easy to get the size
+  */
+
+  const dogs = new Map();
+
+  dogs.set('Snickers', 3);
+  dogs.set('Sunny', 2);
+  dogs.set('Hugo', 10);
+
+  dogs.size; // 3
+  dogs.has('Snickers') // true
+
+  dogs.get('Snickers') // 3
+
+  dogs.delete('Snickers')
+  dogs.has('Snickers') // false
+
+  dogs.forEach((value, key) => console.log(value, key));
+  for (const dog of dogs) { console.log(dog) };
+  for (const [key, value] of dogs) { console.log(key, value) };
+
+  // you can use an obj as key
+
+  const clickCounts = new Map();
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(button => {
+    clickCounts.set(button, 0);
+    button.addEventListener('click', function() {
+      const value = clickCounts.get(this);
+      clickCounts.set(this, value + 1);
+      console.log(clickCounts);
+    })
+  });
+
+  /*
+  weakmap
+  the keys must be obj and the values can be arbitrary
+  doesn't have size property
+  it's not iterable
+  can't clear()
+  */
+
+  let dog1 = { name: 'Snickers', age: 3 };
+  let dog2 = { name: 'Sunny', age: 1 };
+  const strong = new Map();
+  const weak = new WeakMap();
+  strong.set(dog1, 'Snickers is the best!');
+  weak.set(dog2, 'Sunny is the 2nd best!')
+
+  // if an obj is deleted in the code, it is automatically removed from the weakmap
+  dog1 = null;
+  dog2 = null;
+</script>
+</body>
+</html>
