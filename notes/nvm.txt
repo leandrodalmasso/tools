@@ -3,7 +3,7 @@ wget or curl
 close and open terminal
 nvm --version
 ---------------------------------
-install node with nvm:
+install node lts:
 nvm install --lts
 node --version
 npm --version

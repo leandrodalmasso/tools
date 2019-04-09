@@ -11,13 +11,13 @@ cd ..
 cd ./../
 cd
 ---------------------------------------------
-create directory:
-mkdir
----------------------------------------------
 create file:
 touch fileName.txt
 ---------------------------------------------
+create directory:
+mkdir directoryName
+---------------------------------------------
 delete:
-rm
-rm -r
-rm -rf
+rm fileName.txt
+rm -r directoryName
+rm -rf repoName
