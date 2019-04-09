@@ -1,27 +1,30 @@
 install:
 sudo apt-get install git
------------------------------------------------
+---------------------------------------------------
 config for all repos:
 git config --global user.email name@domain.com
------------------------------------------------
+---------------------------------------------------
 config for every repo:
 git config user.email name@domain.com
 git config user.name name
------------------------------------------------
+---------------------------------------------------
 config list:
 git config --list
------------------------------------------------
+---------------------------------------------------
 config unset:
 git config --global --unset user.name
 git config --unset user.name
------------------------------------------------
+---------------------------------------------------
 remember credentials:
 git config credential.helper store
 push or pull one time
------------------------------------------------
+---------------------------------------------------
 aliases:
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.last 'log -1 HEAD'
+---------------------------------------------------
+change last commit msg (not pushed):
+git commit --amend
