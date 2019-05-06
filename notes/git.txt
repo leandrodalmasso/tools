@@ -33,6 +33,7 @@ git config --global --unset alias.pl
 ---------------------------------------------------
 stash:
 git stash save "message"
+git stash save -u "message"
 git stash list
 git stash apply
 git stash apply stash@{0}
