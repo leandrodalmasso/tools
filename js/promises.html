@@ -8,10 +8,10 @@
 <script>
   /*
   We have:
-  - A 'producing code' that does something that takes time
-  - A 'consuming code' that wants the result of the 'producing code'
+    - A 'producing code' that does something that takes time
+    - A 'consuming code' that wants the result of the 'producing code'
 
-  A promise is a JS object that links the 'producing code' and the 'consuming code'.
+  A promise links the 'producing code' and the 'consuming code'.
 
   It can be resolved with a value or rejected with an error.
 
@@ -19,7 +19,7 @@
   */
 
   const promise = new Promise((resolve, reject) => (
-    setTimeout(
+    setTimeout( 
       () => resolve('done!'),
       // () => reject(new Error('oops!')),
       1000
@@ -28,7 +28,7 @@
 
   promise
     .then(value => console.log(value))
-    .catch(error => console.log(error.message))
+    .catch(error => console.log(error.message));
 </script>
 </body>
 </html>

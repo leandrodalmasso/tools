@@ -35,40 +35,24 @@
     }
   });
 
-  const hydrateAuthor = (post) => {
-    const authorDetails = authors.find(author =>
-      author.name === post.author
-    );
+  const hydrateAuthor = (post) => new Promise((resolve, reject) => {
+    const authorDetails = authors.find(author => author.name === post.author);
 
     if (authorDetails) {
-      const postsHydrated = posts.map(post => {
-        if (post.author === authorDetails.name) {
-          post.author = authorDetails
-        }
-
-        return post;
-      });
-      
-      return postsHydrated;
+      post.author = authorDetails;
+      resolve(post);
     } else {
-      throw new Error('No author was found...');
+      reject(Error('No author was found...'));
     }
-  };
+  });
 
-  getPostById(1)
-    .then(post => hydrateAuthor(post))
-    .then(postsHydrated => console.log(postsHydrated))
-    .catch(error => console.log(error.message))
-
-  getPostById(2)
-    .then(post => hydrateAuthor(post))
-    .then(postsHydrated => console.log(postsHydrated))
-    .catch(error => console.log(error.message))
-
-  getPostById(8)
-    .then(post => hydrateAuthor(post))
-    .then(postsHydrated => console.log(postsHydrated))
-    .catch(error => console.log(error.message))
+  getPostById(10)
+    .then(post => {
+      console.log(post);
+      return hydrateAuthor(post);
+    })
+    .then(post => { console.log(post) })
+    .catch(error => console.log(error.message));
 </script>
 </body>
 </html>
