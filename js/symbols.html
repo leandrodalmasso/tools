@@ -8,6 +8,7 @@
 <script>
   const person = Symbol('Harry Potter');
   const anotherPerson = Symbol('Harry Potter');
+  console.log(person === anotherPerson);
 
   const students = {
     [Symbol('harry')]: {
@@ -23,10 +24,6 @@
       city: 'salta'
     },
   };
-
-  for (prop in students) {
-    console.log(prop);
-  }
 
   const studentsSymbols = Object.getOwnPropertySymbols(students);
   console.log(studentsSymbols);

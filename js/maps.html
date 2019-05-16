@@ -5,51 +5,39 @@
   <title>Maps and weakmaps</title>
 </head>
 <body>
-<div class="buttons">
-  <button>Snakes</button>
-  <button>Cry</button>
-  <button>Ice Cream</button>
-  <button>Fire</button>
-  <button>Dancer</button>
-</div>
 <script>
   /*
   map
-  key-value pairs of any type
+  UNIQUE key-value pairs of any type
   remembers the original insertion order of the keys
   it's easy to get the size
   */
 
   const dogs = new Map();
 
-  dogs.set('Snickers', 3);
-  dogs.set('Sunny', 2);
-  dogs.set('Hugo', 10);
+  // set
+  dogs.set('Pachu', 16);
+  dogs.set('Ciro', 3);
+  dogs.set('Snoopy', 69);
 
-  dogs.size; // 3
-  dogs.has('Snickers') // true
+  // has
+  dogs.has('Pachu');
 
-  dogs.get('Snickers') // 3
+  // get
+  dogs.get('Pachu');
 
-  dogs.delete('Snickers')
-  dogs.has('Snickers') // false
+  // size
+  dogs.size;
 
-  dogs.forEach((value, key) => console.log(value, key));
-  for (const dog of dogs) { console.log(dog) };
-  for (const [key, value] of dogs) { console.log(key, value) };
+  // delete
+  dogs.delete('Snoopy')
 
-  // you can use an obj as key
+  // loop
+  dogs.forEach((value, key) => { console.log(value, key) });
 
-  const clickCounts = new Map();
-  const buttons = document.querySelectorAll('button');
-  buttons.forEach(button => {
-    clickCounts.set(button, 0);
-    button.addEventListener('click', function() {
-      const value = clickCounts.get(this);
-      clickCounts.set(this, value + 1);
-      console.log(clickCounts);
-    })
-  });
+  for (const [key, value] of dogs) {
+    console.log(key, value);
+  }
 
   /*
   weakmap
@@ -57,16 +45,18 @@
   doesn't have size property
   it's not iterable
   can't clear()
+  if an obj is deleted in the code, it is automatically removed from the weakmap
   */
 
   let dog1 = { name: 'Snickers', age: 3 };
   let dog2 = { name: 'Sunny', age: 1 };
+
   const strong = new Map();
   const weak = new WeakMap();
+
   strong.set(dog1, 'Snickers is the best!');
   weak.set(dog2, 'Sunny is the 2nd best!')
 
-  // if an obj is deleted in the code, it is automatically removed from the weakmap
   dog1 = null;
   dog2 = null;
 </script>

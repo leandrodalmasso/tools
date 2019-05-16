@@ -24,17 +24,6 @@
       console.log('Sorry, you can\'t change the value');
     }
   });
-
-  const phoneHandler = {
-    get(target, name) {
-      return target[name].replace(/(\d{4})(\d{6})/, '($1)$2');
-    },
-    set(target, name, value) {
-      target[name] = value.match(/[0-9]/g).join('');
-    }
-  };
-
-  const phoneProxy = new Proxy({}, phoneHandler);
 </script>
 </body>
 </html>
