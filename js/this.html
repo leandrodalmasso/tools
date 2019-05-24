@@ -27,15 +27,15 @@
   }
 </style>
 <script>
-  /**
-   * global
-   */
+  /*
+  global
+  */
 
   console.log(this); // window
 
-  /**
-   * function calls
-   */
+  /*
+  function calls
+  */
 
   function logThis() {
     console.log(this);
@@ -48,33 +48,33 @@
   }
   strictModeLogThis(); // undefined
 
-  /**
-   * objects
-   */
+  /*
+  objects
+  */
 
   let obj = {
     logThis,
   };
   obj.logThis(); // obj
 
-  /**
-   * dom elements
-   */
+  /*
+  dom elements
+  */
 
   const square = document.getElementById('square');
   square.addEventListener('click', logThis); // square
 
-  /**
-   * explicit bindings
-   */
+  /*
+  explicit bindings
+  */
 
   logThis.call(obj); // obj
   logThis.bind(obj)(); // obj
   logThis.apply(obj); // obj
 
-  /**
-   * arrow
-   */
+  /*
+  arrow
+  */
 
   const arrowLogThis = () => console.log(this);
 

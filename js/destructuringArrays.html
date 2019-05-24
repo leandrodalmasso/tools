@@ -7,26 +7,16 @@
 <body>
 <script>
   const interests = ['js', 'music', 'books'];
-
   const [ first, second, third ] = interests;
-  console.log(first); // js
-  console.log(second); // music
-  console.log(third); // books
 
   // skip items
   let [ a, , c ] = interests;
-  console.log(a); // js
-  console.log(c); // books
 
   // swap without aux
   [a, c] = [c, a];
-  console.log(a); // books
-  console.log(c); // js
 
   // rest
-  const [ firstInt, ...rest ] = interests;
-  console.log(firstInt); // js
-  console.log(rest); // [ 'music', 'books' ]
+  const [ firstInterest, ...rest ] = interests;
 </script>
 </body>
 </html>
