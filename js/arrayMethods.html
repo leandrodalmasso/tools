@@ -6,137 +6,143 @@
 </head>
 <body>
 <script>
-  const values = [3, 5, 8, 10, 13];
+  let numbers = [4, 8, 15, 16, 23, 42];
+  const resetNumbersArray = () => { numbers = [4, 8, 15, 16, 23, 42] };
 
-  /**
-   * push()
-   * Adds elements to the end and returns the new length
-   */
+  /*
+  push()
+  adds elements to the end and returns the new length
+  */
 
-  console.log(values.push(8)) // 6
+  numbers.push(4);
+  numbers.push(4, 8);
 
-  /**
-   * pop()
-   * Removes the last element and returns it
-   */
+  /*
+  pop()
+  removes the last element and returns it
+  */
 
-  console.log(values.pop()) // 8
+  numbers.pop();
 
-  /**
-   * unshift()
-   * Adds elements to the beginning and returns the new length
-   */
+  /*
+  unshift()
+  adds elements to the beginning and returns the new length
+  */
 
-  console.log(values.unshift(1)); // 6
+  numbers.unshift(4);
+  numbers.unshift(4, 8);
 
-  /**
-   * shift()
-   * Removes the first element and returns it
-   */
+  /*
+  shift()
+  Removes the first element and returns it
+  */
 
-  console.log(values.shift()); // 1
+  numbers.shift();
 
-  /**
-   * indexOf()
-   * Returns the first index at which a given element can be found
-   */
+  /*
+  indexOf()
+  returns the first index at which a given element can be found
+  */
 
-  console.log(values.indexOf(5)) // 1
+  numbers.indexOf(4);
 
-  /**
-   * lastIndexOf()
-   * Returns the last index at which a given element can be found
-   */
+  /*
+  lastIndexOf()
+  returns the last index at which a given element can be found
+  */
 
-  console.log(values.lastIndexOf(5)) // 1
+  numbers.lastIndexOf(4);
 
-  /**
-   * slice(firstIndexIncluded, lastIndexExcluded)
-   * returns a new array that is a copy of a portion of the array
-   */
+  /*
+  slice(firstIndexIncluded, lastIndexExcluded)
+  returns a new array that is a copy of a portion of the array
+  */
 
-  console.log(values.slice(1, 3)); // [ 5, 8 ]
+  numbers.slice(1, 3);
 
-  /**
-   * splice(start, deleteCount, itemsToAdd)
-   * changes the content of an array removing and/or adding elements
-   */
+  /*
+  splice(firstIndexIncluded, deleteCount, itemsToAdd)
+  changes the content of an array removing and/or adding elements
+  */
 
-  console.log(values.splice(1, 2, 4, 5)) // [ 5, 8 ]
-  console.log(values); // [ 3, 4, 5, 10, 13 ]
+   numbers.splice(1, 3, 4, 8, 15);
 
-  /**
-   * find()
-   * Returns the value of the first element that satisfies the provided testing function
-   */
+  /*
+  find()
+  returns the value of the first element that satisfies the provided testing function
+  */
 
-  const greaterThanFive = (num) => num > 5;
-  console.log(values.find(greaterThanFive)); // 10
+  const greaterThanFive = num => num > 5;
+  numbers.find(greaterThanFive);
 
-  /**
-   * findIndex()
-   * Returns the index of the first element that satisfies the provided testing function
-   */
+  /*
+  findIndex()
+  returns the index of the first element that satisfies the provided testing function
+  */
 
-  console.log(values.findIndex(greaterThanFive)); // 3
+  numbers.findIndex(greaterThanFive);  
 
-  /**
-   * some()
-   * tests if at least one element satisfies the provided testing function
-   */
+  /*
+  some()
+  tests if at least one element satisfies the provided testing function
+  */
 
-  console.log(values.some(greaterThanFive)); // true
+  numbers.some(greaterThanFive);  
 
-  /**
-   * every()
-   * test if all elements satisfy the provided testing function
-   */
+  /*
+  every()
+  test if all elements satisfy the provided testing function
+  */
 
-  const isPositive = (num) => num > 0;
-  console.log(values.every(isPositive)); // true
+  const isPositive = num => num > 0;
+  numbers.every(isPositive);
 
-  /**
-   * map()
-   * creates a new array with the results of calling a provided function on every element
-   */
+  /*
+  map()
+  creates a new array with the results of calling a provided function on every element
+  */
 
-  const timesTwo = (num) => num * 2;
-  const doubledNumbers = values.map(timesTwo);
-  console.log(doubledNumbers); // [ 6, 8, 10, 20, 26 ]
+  const timesTwo = num => num * 2;
+  const doubledNumbers = numbers.map(timesTwo);
 
-  /**
-   * filter()
-   * creates a new array with all elements that satisfy the provided testing function
-   */
+  /*
+  filter()
+  creates a new array with all elements that satisfy the provided testing function
+  */
 
-  const isEven = (num) => num % 2 === 0;
-  const evenNumbers = values.filter(isEven);
-  console.log(evenNumbers); // [ 4, 10 ]
+  const isEven = num => num % 2 === 0;
+  const evenNumbers = numbers.filter(isEven);
 
-  /**
-   * forEach()
-   * executes a provided function once for each array element
-   */
+  /*
+  forEach()
+  executes a provided function once for each array element
+  */
 
-  const logValue = (num) => console.log(num);
-  values.forEach(logValue); // 3 // 4 // 5 // 10 // 13
+  const logValue = num => console.log(num);
+  numbers.forEach(logValue);
 
-  /**
-   * reduce(callback, initialResult)
-   *  executes a reducer function on each element resulting in a single output value
-   */
+  /*
+  reduce(callback, initialResult)
+  executes a reducer function on each element resulting in a single output value
+  */
 
   const addNumbers = (result, value) => (result + value);
-  const sum = values.reduce(addNumbers, 0);
-  console.log(sum); // 35
+  const sum = numbers.reduce(addNumbers, 0);
 
-  /**
-   * concat()
-   * returns a new array that is a merge of two arrays
-   */
+  /*
+  concat()
+  returns a new array that is a merge of two arrays
+  */
 
   const letters = ['a', 'b', 'c'];
-  console.log(values.concat(letters));
+  const numbersAndLetters = numbers.concat(letters);
+
+  /*
+  join()
+  returns string concatenating all of the elements, separated by commas or a specified separator
+  */
+  numbers.join();
+  numbers.join(' - ');
 </script>
 </body>
 </html>
