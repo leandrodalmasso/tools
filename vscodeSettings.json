@@ -3,6 +3,5 @@
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "window.menuBarVisibility": "toggle",
-  "workbench.startupEditor": "none",
-  // "editor.wordWrap": "on",
+  "workbench.startupEditor": "none"
 }
