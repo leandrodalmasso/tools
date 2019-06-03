@@ -27,6 +27,7 @@ body {
   border-radius: 3px;
   color: #FFF;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .btn.btn-blue {
