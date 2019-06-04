@@ -58,7 +58,7 @@ const reducer = (state = { count: 0, }, action) => {
 // store
 const store = Redux.createStore(reducer);
 
-// event handlers
+// event handlers to dispatch actions
 const addButton = document.getElementById('add');
 const minusButton = document.getElementById('minus');
 const resetButton = document.getElementById('reset');
@@ -78,7 +78,7 @@ resetButton.addEventListener(
   () => store.dispatch(reset())
 );
 
-// listeners
+// listeners to update the ui
 const counterEl = document.getElementById('counter');
 
 const render = () => {
