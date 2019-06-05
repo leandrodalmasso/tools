@@ -6,24 +6,30 @@
 </head>
 <body>
 <script>
-  const user = {
-    admin: true,
-    firstName: 'Mary',
-    lastName: 'Poppins',
-    info: {
-      active: true,
-      posts: 3018,
-    },
-    username: 'maryPoppins',
+  const nextProps = {
+    countriesCreate: {
+      country: {},
+      error: {},
+      status: 'loaded'
+    }
   };
 
-  const {
-    admin = false,
-    firstName: userFirstName,
-    info: {
-      posts
-    }
-  } = user;
+  // const { countriesCreate: {
+  //   country: { countryCode, name: countryName },
+  //   error: { message: errorMessage },
+  //   status
+  // } } = nextProps;
+
+  const { countriesCreate: {
+    country: { countryCode = '', name: countryName = '' },
+    error: { message: errorMessage = '' },
+    status
+  } } = nextProps;
+
+  console.log('countryCode: ', countryCode);
+  console.log('countryName: ', countryName);
+  console.log('errorMessage: ', errorMessage);
+  console.log('status: ', status);
 </script>
 </body>
 </html>
