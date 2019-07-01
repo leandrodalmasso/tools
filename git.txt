@@ -45,3 +45,7 @@ git commit --amend -m "updated message"
 add files to last commit:
 git add
 git commit --amend --no-edit
+---------------------------------------------------
+unstage mantaining changes:
+git reset HEAD
+git reset HEAD filename
