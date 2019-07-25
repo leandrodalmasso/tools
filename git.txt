@@ -1,26 +1,30 @@
-install:
+------------------- INSTALL -----------------------
+
 sudo apt-get install git
----------------------------------------------------
+
+-------------------- CONFIG -----------------------
+
 config for all repos:
 git config --global user.email name@domain.com
----------------------------------------------------
+
 config for every repo:
 git config user.email name@domain.com
 git config user.name name
----------------------------------------------------
+
 config list:
 git config --list
 git config --global --list
----------------------------------------------------
+
 config unset:
 git config --global --unset user.name
 git config --unset user.name
----------------------------------------------------
+
 remember credentials:
 git config credential.helper store
 push or pull one time
----------------------------------------------------
-aliases:
+
+------------------- ALIASES -----------------------
+
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.st status
@@ -29,8 +33,9 @@ git config --global alias.pl pull
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.last 'log -1 HEAD'
 git config --global --unset alias.co
----------------------------------------------------
-stash:
+
+--------------------- STASH -----------------------
+
 git stash save "message"
 git stash save -u "message"
 git stash list
@@ -38,14 +43,24 @@ git stash apply
 git stash apply stash@{0}
 git stash drop stash@{0}
 git stash pop
----------------------------------------------------
-change last commit message:
-git commit --amend -m "updated message"
----------------------------------------------------
-add files to last commit:
-git add
-git commit --amend --no-edit
----------------------------------------------------
+
+------------------- UNSTAGE -----------------------
+
 unstage mantaining changes:
 git reset HEAD
 git reset HEAD filename
+
+------------- CHANGE LOCAL COMMITS ----------------
+
+change last commit message:
+git commit --amend
+git commit --amend -m "updated message"
+
+add files to last commit:
+git add
+git commit --amend --no-edit
+
+-------------- UNDO LOCAL COMMITS -----------------
+
+undo last commit:
+git reset HEAD~
