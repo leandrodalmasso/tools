@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trythy and falsy</title>
+  <title>Truthy and falsy</title>
 </head>
 <body>
 <script>
@@ -22,6 +22,11 @@ Everything else is truthy. That includes:
 {}
 function(){}
 */
+
+console.log(!''); // true
+console.log(!null); // true
+console.log(![]); // false
+console.log(!['hi', 'bye']); // false
 </script>
 </body>
 </html>
