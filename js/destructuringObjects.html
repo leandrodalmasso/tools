@@ -6,30 +6,24 @@
 </head>
 <body>
 <script>
-  const nextProps = {
-    countriesCreate: {
-      country: {},
-      error: {},
-      status: 'loaded'
-    }
-  };
+  const user = {
+    id: 234,
+    username: 'harrypotter',
+    posts: [{
+      id: 0,
+      title: 'I like magic'
+    }, {
+      id: 1,
+      title: 'Gryffindor is cool'
+    }]
+  }
 
-  // const { countriesCreate: {
-  //   country: { countryCode, name: countryName },
-  //   error: { message: errorMessage },
-  //   status
-  // } } = nextProps;
-
-  const { countriesCreate: {
-    country: { countryCode = '', name: countryName = '' },
-    error: { message: errorMessage = '' },
-    status
-  } } = nextProps;
-
-  console.log('countryCode: ', countryCode);
-  console.log('countryName: ', countryName);
-  console.log('errorMessage: ', errorMessage);
-  console.log('status: ', status);
+  const {
+    id,
+    username,
+    posts = [],
+    data: userData = {},
+  } = user;
 </script>
 </body>
 </html>

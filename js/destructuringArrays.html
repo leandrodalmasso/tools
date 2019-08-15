@@ -6,17 +6,17 @@
 </head>
 <body>
 <script>
-  const interests = ['js', 'music', 'books'];
-  const [ first, second, third ] = interests;
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-  // skip items
-  let [ a, , c ] = interests;
-
-  // swap without aux
-  [a, c] = [c, a];
+  const [one, two, three,,,, seven, eight] = numbers;
 
   // rest
-  const [ firstInterest, ...rest ] = interests;
+  const [ firstOne, ...rest ] = numbers;
+
+  // swap
+  let a = 'a';
+  let b = 'b';
+  [a, b] = [b, a]
 </script>
 </body>
 </html>
