@@ -10,84 +10,102 @@
   prototypal inheritance
   */
   
-  // function Dog(name, color) {
+  // function Animal (name, energy) {
+  //   // const this = Object.create(Animal.prototype);
+
   //   this.name = name;
-  //   this.color = color;
+  //   this.energy = energy;
+
+  //   // return this;
   // }
-  // Dog.prototype.bark = function() {
-  //   console.log(`Bark bark! My name is ${this.name}`);
+
+  // Animal.prototype.eat = function (amount) {
+  //   console.log(`${this.name} is eating.`);
+  //   this.energy += amount;
   // }
+
+  // Animal.prototype.sleep = function (length) {
+  //   console.log(`${this.name} is sleeping.`);
+  //   this.energy += length;
+  // }
+
+  // Animal.prototype.play = function (length) {
+  //   console.log(`${this.name} is playing.`);
+  //   this.energy -= length;
+  // }
+
+  // const leo = new Animal('Leo', 7);
+  // const snoop = new Animal('Snoop', 10);
   
   /*
   es6
   */
   
-  // class Dog {
-  //   constructor(name, color) {
-  //     this.name = name;
-  //     this.color = color;
-  //   }
-    
-  //   bark() {
-  //     console.log(`Bark bark! My name is ${this.name}`);
-  //   }
-    
-  //   // isn't called on instances but on the class itself
-  //   static info() {
-  //     console.log('A dog is better than a cat!');
-  //   }
+  class Animal {
+    constructor(name, energy) {
+      this.name = name;
+      this.energy = energy;
+    }
 
-  //   // setter
-  //   set nickName(value) {
-  //     this.nick = value.trim() ;
-  //   }
+    eat(amount) {
+      console.log(`${this.name} is eating.`);
+      this.energy += amount;
+    }
 
-  //   // getter
-  //   get nickName() {
-  //     return this.nick;
-  //   }
-  // }
+    sleep(length) {
+      console.log(`${this.name} is sleeping.`);
+      this.energy += length;
+    }
+
+    play(length) {
+      console.log(`${this.name} is playing.`);
+      this.energy -= length;
+    }
+
+    // setter
+    set nickName(value) {
+      this.nickNameValue = value.trim() ;
+    }
+
+    // getter
+    get nickName() {
+      if (this.nickNameValue) {
+        return this.nickNameValue.toUpperCase();
+      }
+
+      return 'Sorry, no nickname was setted...'
+    }
+
+    // isn't called on instances but on the class itself
+    static nextToEat(animals) {
+      const sortedByLeastEnergy = animals.sort((a, b) => a.energy - b.energy)
+
+      return sortedByLeastEnergy[0].name;
+    }
+  }
+
+  const leo = new Animal('Leo', 7);
+  const snoop = new Animal('Snoop', 10);
+
+  const friendsWithSugar = [];
+  const friendsWithoutSugar = new Array();
 
   /*
   extending classes
   */
 
-  class Animal {
-    constructor(name) {
-      this.name = name;
-      this.thirst = 100;
-      this.belly = [];
-    }
-
-    drink() {
-      this.thirst -= 10;
-      return this.thirst;
-    }
-
-    eat(food) {
-      this.belly.push(food);
-      return this.belly;
-    }
-
-    run() {
-      this.thirst += 10;
-      return this.thirst;
-    }
-  }
-
   class Dog extends Animal {
-    constructor(name, color) {
-      super(name);
+    constructor(name, energy, color) {
+      super(name, energy);
       this.color = color;
     }
 
     bark() {
-      console.log(`Bark bark! My name is ${this.name}`);
+      console.log(`Bark! My name is ${this.name}`);
     }
   }
 
-  const snickers = new Dog('Snickers', 'brown');
-  const sunny = new Dog('Sunny', 'white');
+  const ciro = new Dog('Ciro', 20, 'brown');
 
   /*
   extending array
