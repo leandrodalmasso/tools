@@ -1,8 +1,12 @@
------------------------ INSTALL ---------------------------
+------------------------------- INSTALL -----------------------------------
 
 sudo apt-get install git
 
------------------------- CONFIG ---------------------------
+--------------------------------- MAN -------------------------------------
+
+man git <command>
+
+-------------------------------- CONFIG -----------------------------------
 
 config for the current repo:
 git config
@@ -32,17 +36,18 @@ git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.pl pull
-git config --global alias.unstage 'reset HEAD --'
-git config --global alias.last 'log -1 HEAD'
+git config --global alias.lg "log --oneline"
+git config --global alias.unstage "reset HEAD --"
+git config --global alias.last "log -1 HEAD"
 git config --global --unset alias.co
 
------------------------- INIT -----------------------------
+-------------------------------- INIT -------------------------------------
 
 transform the current directory into a Git repository:
 git init
 git init --bare
 
------------------------- CLONE ----------------------------
+-------------------------------- CLONE ------------------------------------
 
 clone a remote repo:
 git clone <url>
@@ -50,9 +55,20 @@ git clone <url>
 clone a local repo:
 git clone <repo> <directory>
 
------------------------- WORKFLOW -------------------------
+------------------------------- WORKFLOW ----------------------------------
+
+1. Branching
+2. Commits
+3. Pull Request
+4. Collaborate
+5. Merge
 
 git status
+
+git branch <branch name>
+
+git checkout <branch name>
+git checkout -b <branch name>
 
 git add <file>
 git add <directory>
@@ -61,9 +77,34 @@ git add .
 git commit -m "commit message"
 
 git pull
-git push
+git pull origin <branch name>
 
------------------ CHANGE LOCAL COMMITS --------------------
+git push origin <branch name>
+
+----------------------------------- LOG -----------------------------------
+
+git log
+git log --online
+
+----------------------------- UNSTAGE CHANGES -----------------------------
+
+git reset <file>
+
+------------------------------ UNDO COMMITS -------------------------------
+
+undo a commit with another commit:
+git revert <commit-ish>
+git revert HEAD
+
+undo maintaining changes:
+git reset <commit-ish>
+git reset HEAD~
+
+undo loosing uncommited changes:
+git reset --hard <commit-ish
+git reset --hard HEAD~
+
+------------------------- CHANGE LOCAL COMMITS ----------------------------
 
 change last commit message:
 git commit --amend -m "updated message"
@@ -72,7 +113,7 @@ add files to last commit:
 git add
 git commit --amend --no-edit
 
-------------------------- STASH ---------------------------
+--------------------------------- STASH -----------------------------------
 
 git stash save "message"
 git stash save -u "message"
@@ -81,14 +122,3 @@ git stash apply
 git stash apply stash@{0}
 git stash drop stash@{0}
 git stash pop
-
------------------------ UNSTAGE ---------------------------
-
-unstage mantaining changes:
-git reset HEAD
-git reset HEAD filename
-
------------------- UNDO LOCAL COMMITS ---------------------
-
-undo last commit:
-git reset HEAD~
