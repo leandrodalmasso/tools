@@ -84,7 +84,7 @@ git push origin <branch name>
 ----------------------------------- LOG -----------------------------------
 
 git log
-git log --online
+git log --oneline
 
 ----------------------------- UNSTAGE CHANGES -----------------------------
 
