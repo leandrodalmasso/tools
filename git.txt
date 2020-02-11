@@ -101,7 +101,7 @@ git reset <commit-ish>
 git reset HEAD~
 
 undo loosing uncommited changes:
-git reset --hard <commit-ish
+git reset --hard <commit-ish>
 git reset --hard HEAD~
 
 ------------------------- CHANGE LOCAL COMMITS ----------------------------
@@ -122,3 +122,13 @@ git stash apply
 git stash apply stash@{0}
 git stash drop stash@{0}
 git stash pop
+
+------------------------------ CHERRY PICK --------------------------------
+
+pick a commit and appended it to the current working HEAD:
+git cherry-pick <commitSha>
+
+---------------------------------- DIFF -----------------------------------
+
+comparing files between two different commits:
+git diff <commitSha> <commitSha>
