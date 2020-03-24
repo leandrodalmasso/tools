@@ -132,3 +132,4 @@ git cherry-pick <commitSha>
 
 comparing files between two different commits:
 git diff <commitSha> <commitSha>
+git diff <commitSha> <commitSha> <file>
