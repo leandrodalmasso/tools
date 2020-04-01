@@ -5,6 +5,5 @@
   "editor.tabSize": 2,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "window.menuBarVisibility": "toggle",
-  "workbench.editor.enablePreview": false,
   "workbench.startupEditor": "none"
 }
