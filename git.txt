@@ -134,3 +134,9 @@ git cherry-pick <commitSha>
 comparing files between two different commits:
 git diff <commitSha> <commitSha>
 git diff <commitSha> <commitSha> <file>
+
+--------------------------------- REBASE ----------------------------------
+
+git rebase -i HEAD~N
+Reorder, pick and squash
+New message
