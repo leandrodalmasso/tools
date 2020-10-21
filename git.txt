@@ -134,3 +134,22 @@ git cherry-pick <commitSha>
 comparing files between two different commits:
 git diff <commitSha> <commitSha>
 git diff <commitSha> <commitSha> <file>
+
+--------------------------------- SQUASH ----------------------------------
+
+git rebase --interactive HEAD~N
+
+reorder
+
+pick d94e78 Prepare the workbench for feature Z     --- older commit
+s 4e9baa Cool implementation 
+s afb581 Fix this and that  
+s 643d0e Code cleanup
+s 87871a I'm ready! 
+s 0c3317 Whoops, not yet... 
+s 871adf OK, feature Z is fully implemented      --- newer commit
+
+save files and write commit message
+
+git pull
+git push
