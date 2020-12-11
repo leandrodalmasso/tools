@@ -41,6 +41,9 @@ git config --global alias.unstage "reset HEAD --"
 git config --global alias.last "log -1 HEAD"
 git config --global --unset alias.co
 
+vscode as default editor:
+git config --global core.editor "code --wait"
+
 -------------------------------- INIT -------------------------------------
 
 transform the current directory into a Git repository:
