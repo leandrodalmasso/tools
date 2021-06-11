@@ -5,5 +5,18 @@
   "editor.tabSize": 2,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "window.menuBarVisibility": "toggle",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#274a57"
+  },
+  "diffEditor.ignoreTrimWhitespace": false
 }
