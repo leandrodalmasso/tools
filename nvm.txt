@@ -7,3 +7,6 @@ install node lts:
 nvm install --lts
 node --version
 npm --version
+---------------------------------
+update node lts:
+nvm install 'lts/*' --reinstall-packages-from=current
