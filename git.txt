@@ -117,6 +117,11 @@ add files to last commit:
 git add
 git commit --amend --no-edit
 
+----------------------------- LOCAL BRANCHES ------------------------------
+
+rename current branch:
+git branch -m <newname>
+
 --------------------------------- STASH -----------------------------------
 
 git stash save "message"
