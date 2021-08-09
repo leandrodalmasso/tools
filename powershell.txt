@@ -1,0 +1,3 @@
+--------------------------- DELETE ---------------------------
+
+rm .\node_modules\, .\package-lock.json -Recurse -Force
