@@ -18,6 +18,5 @@
     "workbench.colorCustomizations": {
       "statusBar.background": "#274a57"
     },
-    "diffEditor.ignoreTrimWhitespace": false,
-    "files.eol": "\n"
+    "diffEditor.ignoreTrimWhitespace": false
   }
