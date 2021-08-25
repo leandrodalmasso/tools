@@ -117,10 +117,13 @@ add files to last commit:
 git add
 git commit --amend --no-edit
 
------------------------------ LOCAL BRANCHES ------------------------------
+-------------------------------- BRANCHES ---------------------------------
 
 rename current branch:
 git branch -m <newname>
+
+know the parent branch:
+git log and see commits
 
 --------------------------------- STASH -----------------------------------
 
