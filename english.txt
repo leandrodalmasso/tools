@@ -1,0 +1,9 @@
+------------------------ PRESENT ------------------------
+
+I       am
+You     are
+he/she  is
+
+I       have
+You     have
+he/she  has
