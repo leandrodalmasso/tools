@@ -1,16 +1,14 @@
 {
-  "Print variable to console": {
+  "Console log": {
     "prefix": "cl",
     "body": [
       "console.log(`$1: `, $1);"
-    ],
-    "description": "Log variable to console"
+    ]
   },
-  "Print to console": {
-    "prefix": "lg",
+  "Console log arrow": {
+    "prefix": "cla",
     "body": [
       "console.log(`$1 ------------------------->`);"
-    ],
-    "description": "Log to console"
+    ]
   }
 }
