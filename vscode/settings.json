@@ -1,22 +1,37 @@
 {
-    "breadcrumbs.enabled": false,
-    "editor.detectIndentation": false,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "window.menuBarVisibility": "toggle",
-    "workbench.startupEditor": "none",
-    "[javascriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "files.associations": {
-      "*.js": "javascriptreact"
-    },
-    "[json]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "workbench.colorCustomizations": {
-      "statusBar.background": "#274a57"
-    },
-    "diffEditor.ignoreTrimWhitespace": false
-  }
+  // "[javascriptreact]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[json]": {
+  //   "editor.defaultFormatter": "vscode.json-language-features"
+  // },
+  // "[jsonc]": {
+  //   "editor.defaultFormatter": "vscode.json-language-features"
+  // },
+  "breadcrumbs.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.env.local": "env",
+    "*.env.build.development": "env",
+    "*.env.build.rt": "env",
+    "*.env.build.preprod": "env",
+    "*.env.build.production": "env",
+    "*.env.build.brazil.development": "env",
+    "*.env.build.brazil.rt": "env",
+    "*.env.build.brazil.preprod": "env",
+    "*.env.build.brazil.production": "env",
+  },
+  "files.eol": "\n",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "window.menuBarVisibility": "toggle",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#274a57"
+  },
+  "workbench.startupEditor": "none",
+  "security.workspace.trust.untrustedFiles": "open"
+}
