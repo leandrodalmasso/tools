@@ -94,6 +94,10 @@ git log --oneline
 git reset HEAD
 git reset <file>
 
+-------------------------- UNDO UNSTAGED CHANGES --------------------------
+
+git restore .
+
 ------------------------------ UNDO COMMITS -------------------------------
 
 undo a commit with another commit:
