@@ -1,3 +1,11 @@
 --------------------------- DELETE ---------------------------
 
 rm .\node_modules\, .\package-lock.json -Recurse -Force
+
+---------------------------- MOVE ----------------------------
+
+move a file and rename it:
+Move-Item -Path C:\test.txt -Destination E:\Temp\tst.txt
+
+move a directory:
+Move-Item -Path C:\Temp -Destination C:\Logs
