@@ -168,3 +168,49 @@ save files and write commit message
 
 git pull
 git push
+
+----------------------------------- SSH -----------------------------------
+
+1.
+create ssh keys:
+cd ~/.ssh
+ssh-keygen -t rsa -C "lean-office@gmail.com" -f "lean-office"
+ssh-keygen -t rsa -C "lean-personalgmail.com" -f "lean-personal"
+
+2.
+add keys to ssh agent:
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/lean-office
+ssh-add -K ~/.ssh/lean-personal
+
+3.
+add ssh keys to GitHub:
+clip < ~/.ssh/lean-office.pub
+
+4.
+create a config file and make host entries:
+cd ~/.ssh
+touch config
+open config
+--------------------------------------------
+#lean-office account
+Host github.com-lean-office
+HostName github.com
+User git
+IdentityFile ~/.ssh/lean-office
+
+#lean-personal account
+Host github.com-lean-personal
+HostName github.com
+User git
+IdentityFile ~/.ssh/lean-personal
+--------------------------------------------
+
+5.
+clone repos with proper host:
+git clone git@github.com-{your-username}:{owner-user-name}/{the-repo-name}.git
+
+6.
+config user.email and user.name in every repo:
+git config user.email "lean-office@gmail.com"
+git config user.name "lean-office"
