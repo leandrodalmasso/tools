@@ -1,4 +1,7 @@
 {
+  // "[javascriptreact]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
   // "[json]": {
   //   "editor.defaultFormatter": "vscode.json-language-features"
   // },
@@ -12,7 +15,9 @@
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "files.associations": {
-    "*.js": "javascriptreact"
+    "*.js": "javascriptreact",
+    "*.ts": "typescriptreact",
+    "*.css": "css"
   },
   "files.eol": "\n",
   "javascript.updateImportsOnFileMove.enabled": "never",
@@ -25,5 +30,21 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
