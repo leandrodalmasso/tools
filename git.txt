@@ -121,6 +121,11 @@ add files to last commit:
 git add
 git commit --amend --no-edit
 
+----------------------------- RESTORE CHANGES -----------------------------
+
+git restore .
+git restore <file>
+
 -------------------------------- BRANCHES ---------------------------------
 
 rename current branch:
@@ -138,6 +143,7 @@ git stash apply
 git stash apply stash@{0}
 git stash drop stash@{0}
 git stash pop
+git stash clear
 
 ------------------------------ CHERRY PICK --------------------------------
 
