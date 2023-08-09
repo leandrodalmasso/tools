@@ -1,0 +1,6 @@
+------------------------ Versions ------------------------
+
+"package": "MAJOR.MINOR.PATCH"
+
+~ allows latest PATCH version
+^ allows MINOR updates
