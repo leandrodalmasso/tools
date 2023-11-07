@@ -148,7 +148,8 @@ git stash clear
 ------------------------------ CHERRY PICK --------------------------------
 
 pick a commit and appended it to the current working HEAD:
-git cherry-pick <commitSha>
+git cherry-pick -m 1 <HASH-1> <HASH-2> ...
+1 === parent branch
 
 ---------------------------------- DIFF -----------------------------------
 
