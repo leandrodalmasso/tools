@@ -2,6 +2,10 @@
 
 Get-ChildItem -Force
 
+---------------------- CREATE NEW FILES ----------------------
+
+New-Item -Path . -Name "app.js"
+
 --------------------------- DELETE ---------------------------
 
 rm .\node_modules\, .\package-lock.json -Recurse -Force
