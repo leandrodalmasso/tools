@@ -17,3 +17,7 @@ Move-Item -Path C:\test.txt -Destination E:\Temp\tst.txt
 
 move a directory:
 Move-Item -Path C:\Temp -Destination C:\Logs
+
+--------------------------- RENAME ---------------------------
+
+Rename-Item -Path .\express-app\ -NewName express-first-app
