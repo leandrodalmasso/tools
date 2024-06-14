@@ -190,9 +190,18 @@ ssh-keygen -t rsa -C "lean-personalgmail.com" -f "lean-personal"
 
 2.
 add keys to ssh agent:
+
+bash
 eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/lean-office
 ssh-add -K ~/.ssh/lean-personal
+
+powershell
+Start powershell as administrator
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+Get-Service ssh-agent
+ssh-add <complete-key-path-here>
 
 3.
 add ssh keys to GitHub:
