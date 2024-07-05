@@ -6,6 +6,10 @@ Get-ChildItem -Force
 
 New-Item -Path . -Name "app.js"
 
+--------------------- CREATE NEW FOLDERS ---------------------
+
+New-Item -Path . -Name "app" -ItemType "directory"
+
 --------------------------- DELETE ---------------------------
 
 rm .\node_modules\, .\package-lock.json -Recurse -Force
